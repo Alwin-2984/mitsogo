@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface Platform {
@@ -67,7 +68,7 @@ export default function PlatformsSupported() {
                            max-w-[150px] h-[60px] sm:max-w-[190px] sm:h-[72px] 
                            rounded-[10px] platformLogoList_translate-transition-kit__A2GmB"
               >
-                <img
+                <Image
                   src={platform.imgSrc}
                   alt={platform.imgAlt}
                   loading="lazy"

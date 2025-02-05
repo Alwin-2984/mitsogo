@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -86,7 +87,7 @@ export default function LogosSlider() {
                 className="block max-w-[130px] sm:max-w-[200px] w-full"
                 style={{ width: '100%', display: 'inline-block' }}
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
                   loading="lazy"

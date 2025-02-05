@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -109,10 +110,12 @@ export default function WhyChooseHexnode() {
                 <div className="flex flex-col md:flex-row overflow-hidden rounded-[18px] relative group">
                   {/* Image Container */}
                   <div className="max-h-[400px] w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[320px] lg:h-[320px] relative md:basis-[47%] md:max-w-[320px] leading-[0px] overflow-hidden">
-                    <img
+                    <Image
                       alt={`${slide.name} image`}
                       src={slide.imageUrl}
                       className="object-cover align-middle w-full h-full"
+                      width={320}
+                      height={320}
                     />
                   </div>
                   {/* Text Container */}

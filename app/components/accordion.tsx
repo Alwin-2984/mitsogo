@@ -1,5 +1,7 @@
 'use client';
+import Image from 'next/image';
 import React, { useState } from 'react';
+// import { useMediaQuery } from 'react-responsive';
 
 const accordionData = [
   {
@@ -56,7 +58,7 @@ const accordionData = [
 
 export default function KioskAccordionWithImages() {
   const [openIndex, setOpenIndex] = useState(0);
-
+  //   const isMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const handleAccordionClick = (index: number) => {
     setOpenIndex(index);
   };
@@ -64,19 +66,21 @@ export default function KioskAccordionWithImages() {
   const currentImage = openIndex >= 0 ? accordionData[openIndex].image : null;
 
   return (
-    <div className="w-[88%] max-w-[1300px] mx-auto">
+    <div className="w-[88%] max-w-[1300px] mx-auto pb-[60px] lg:pb-[120px]">
       <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-[#020a19] pb-[20px] md:pb-[20px] max-w-[340px] sm:max-w-[800px] mx-auto">
         What additional possibilities does the Kiosk mode offer?
       </h2>
 
       <div className="flex flex-col md:flex-row items-center justify-between md:mt-[40px] transition-all duration-300 ease-out">
-        <div className="md:w-1/2 md:max-w-[545px] max-h-[545px] relative mr-[20px] transition-all duration-300 ease-out mb-6 md:mb-0">
+        <div className="max-sm:hidden md:w-1/2 md:max-w-[545px] max-h-[545px] relative mr-[20px] transition-all duration-300 ease-out mb-6 md:mb-0">
           {currentImage && (
             <div className="rounded-[10px] overflow-hidden transition-all duration-300 ease-out">
-              <img
+              <Image
                 src={currentImage.src}
                 alt={currentImage.alt}
                 className="block w-full max-h-[565px] object-contain"
+                width={460}
+                height={350}
               />
             </div>
           )}
@@ -92,7 +96,9 @@ export default function KioskAccordionWithImages() {
               >
                 <h3
                   onClick={() => handleAccordionClick(index)}
-                  className="text-[#050607] cursor-pointer font-bold text-[24px] leading-[36px] lg:text-[26px] lg:leading-[40px] text-left"
+                  className={`text-[#050607] cursor-pointer font-bold text-[24px] leading-[36px] lg:text-[26px] lg:leading-[40px] text-left ${
+                    isOpen && 'pb-4 mb-4 border-b'
+                  }`}
                 >
                   {item.title}
                 </h3>
@@ -105,6 +111,19 @@ export default function KioskAccordionWithImages() {
                 >
                   {isOpen && (
                     <div>
+                      <div className="hidden max-sm:block md:w-1/2 md:max-w-[545px] max-h-[545px] relative mr-[20px] transition-all duration-300 ease-out mb-6 md:mb-0">
+                        {currentImage && (
+                          <div className="rounded-[10px] overflow-hidden transition-all duration-300 ease-out">
+                            <Image
+                              src={currentImage.src}
+                              alt={currentImage.alt}
+                              className="block w-full max-h-[565px] object-contain"
+                              width={460}
+                              height={350}
+                            />
+                          </div>
+                        )}
+                      </div>
                       <p className="text-[#333333] font-normal text-[18px] leading-[28px] pt-[20px]">
                         {item.content}
                       </p>

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 export const tabsData = [
@@ -164,11 +165,11 @@ export default function KioskTabs() {
               <div className="group w-full max-sm:h-[210px] max-w-[308px] flex-1 max-sm:mt-[15px] mb-[20px] lg:mb-0 sm:max-w-[460px]">
                 <div className="rounded-[10px] overflow-hidden">
                   <figure className="relative max-w-[100%] w-auto align-middle max-sm:h-[220px]">
-                    <img
+                    <Image
                       alt={tabsData[activeTab].label}
                       loading="lazy"
-                      width="570"
-                      height="387"
+                      width={570}
+                      height={387}
                       src={tabsData[activeTab].imageUrl}
                       className="block w-full h-auto"
                     />

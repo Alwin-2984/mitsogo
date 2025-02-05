@@ -25,7 +25,7 @@ export default function Header() {
         }
       `}
     >
-      <div className="w-[88%] mx-auto flex items-center justify-between h-16">
+      <div className="w-[88%] mx-auto md:max-w-[1300px] flex items-center justify-between h-16">
         <h1 className="text-3xl">hexnode</h1>
         <button className="text-white bg-red-700 px-4 text-center uppercase rounded h-11">
           14 Day Free Trial

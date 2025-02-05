@@ -56,16 +56,16 @@ export default function LogosSlider() {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 4 },
+        settings: { slidesToShow: 5 },
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 3 },
       },
     ],
   };
@@ -78,25 +78,20 @@ export default function LogosSlider() {
 
         <Slider {...settings} className="relative z-[2]" arrows={false}>
           {logos.map((logo, idx) => (
-            <div
+            <figure
               key={idx}
-              className="flex items-center justify-center"
-              style={{ outline: 'none' }}
+              className="block max-w-[130px] sm:max-w-[200px] w-full"
+              style={{ width: '100%', display: 'inline-block' }}
             >
-              <figure
-                className="block max-w-[130px] sm:max-w-[200px] w-full"
-                style={{ width: '100%', display: 'inline-block' }}
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  loading="lazy"
-                  width={260}
-                  height={95}
-                  style={{ color: 'transparent' }}
-                />
-              </figure>
-            </div>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                loading="lazy"
+                width={260}
+                height={95}
+                style={{ color: 'transparent' }}
+              />
+            </figure>
           ))}
         </Slider>
       </div>

@@ -1,60 +1,63 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 
 export const tabsData = [
   {
     label: 'Single App Kiosk',
     heading: 'Powerful Single-App Kiosk solutions for enhanced control',
-    description: [
-      'Provision the devices to run one specialized application...',
-      'Customize the device settings to cater to a specific use-case each time...',
-    ],
+    description: ['Provision the devices...', 'Customize the device...'],
     imageUrl: '/images/tabimages/single-app-kios-image.jpg',
   },
   {
     label: 'Multi-App Kiosk',
     heading: 'Multi-App Kiosk solutions for flexible usage',
-    description: [
-      'Allow multiple applications to run in kiosk mode...',
-      'Seamlessly toggle between authorized apps...',
-    ],
+    description: ['Allow multiple applications...', 'Seamlessly toggle...'],
     imageUrl: '/images/tabimages/multi-app-kiosk-image.webp',
   },
   {
     label: 'Web-based Kiosk',
     heading: 'Web-based Kiosk Mode for secure browsing',
-    description: [
-      'Lock devices to a specific website or web app...',
-      'Prevent access to unauthorized URLs...',
-    ],
+    description: ['Lock devices to a specific website...', 'Prevent access...'],
     imageUrl: '/images/tabimages/single-app-kios-image.jpg',
   },
   {
     label: 'Digital Signages',
     heading: 'Robust Digital Signage Kiosk',
-    description: [
-      'Display dynamic content securely and continuously...',
-      'Remotely manage signage content...',
-    ],
+    description: ['Display dynamic content...', 'Remotely manage signage...'],
     imageUrl: '/images/tabimages/web-based-kiosk-image.webp',
   },
   {
     label: 'ASAM Kiosk',
     heading: 'ASAM Kiosk for specialized deployments',
-    description: [
-      'Enable advanced kiosk functionalities...',
-      'Implement tight access control for sensitive apps...',
-    ],
+    description: ['Enable advanced kiosk...', 'Implement tight access...'],
     imageUrl: '/images/tabimages/asam-kiosk-image.webp',
   },
 ];
 
 export default function KioskTabs() {
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState(0);
 
+  // Store refs for each <li> so we can measure them
+  const tabsRef = useRef<HTMLLIElement[]>([]);
+  // Track indicator position/width
+  const [indicatorLeft, setIndicatorLeft] = useState(0);
+  const [indicatorWidth, setIndicatorWidth] = useState(0);
+
+  // On each render, or when `activeTab` changes, update the indicator
+  useEffect(() => {
+    const current = tabsRef.current[activeTab];
+    if (current) {
+      setIndicatorLeft(current.offsetLeft);
+      setIndicatorWidth(current.clientWidth);
+    }
+  }, [activeTab]);
+
+  // Handle mobile accordion behavior
   const handleTabClick = (idx: number) => {
+    // If user re-clicks the same tab (on mobile), close it
+    // Otherwise set the new active index
     if (activeTab === idx) {
       setActiveTab(-1);
     } else {
@@ -75,15 +78,15 @@ export default function KioskTabs() {
             <div key={idx} className="border rounded-md">
               <button
                 onClick={() => handleTabClick(idx)}
-                className={`flex w-full justify-between items-center px-4 py-4 
+                className={`flex w-full justify-between items-center px-4 py-4 rounded-t-md 
                   ${
                     activeTab === idx
                       ? 'bg-[#020a19] text-white'
-                      : 'bg-white text-gray-700'
+                      : 'bg-white text-[#020a19]/50'
                   }
                 `}
               >
-                <span className="w-full text-left text-[18px] sm:text-[20px] leading-[26px] font-bold  text-[#020a19]/50  cursor-pointer flex items-center justify-between">
+                <span className="w-full text-left text-[18px] sm:text-[20px] leading-[26px] font-bold  cursor-pointer flex items-center justify-between">
                   {tab.label}
                 </span>
                 <span
@@ -126,28 +129,41 @@ export default function KioskTabs() {
 
         {/* DESKTOP Tabs (hidden below sm) */}
         <div className="hidden sm:block">
+          {/* Tabs container */}
           <div className="flex bg-white justify-center relative">
-            <div className="w-full relative border-[1px] border-[#f7f7f7] rounded-t-[4px] overflow-hidden">
+            <div className="w-full relative border border-[#f7f7f7] rounded-t-[4px] overflow-hidden">
               <div className="w-full scroll-smooth overflow-x-auto relative inline-block">
-                <ul className="flex duration-300 ease-in justify-between items-center whitespace-nowrap cursor-pointer">
+                {/* The UL is positioned relative so we can place our animated indicator behind the <li> */}
+                <ul className="relative flex duration-300 ease-in justify-between items-center whitespace-nowrap cursor-pointer">
+                  {/* The “slide” indicator */}
+                  <div
+                    className="absolute top-0 left-0 h-full bg-[#020a19] z-[1] transition-all duration-300"
+                    style={{
+                      transform: `translateX(${indicatorLeft}px)`,
+                      width: indicatorWidth,
+                    }}
+                  />
                   {tabsData.map((tab, idx) => (
                     <li
                       key={idx}
+                      ref={(el) => {
+                        if (el) tabsRef.current[idx] = el;
+                      }}
                       onClick={() => setActiveTab(idx)}
-                      className={`flex-1 min-h-[80px] w-full px-[30px] relative text-center whitespace-normal 
-                        transition-all duration-300 ease-in
-                        before:content-[''] before:absolute before:left-0 before:w-[2px] before:h-full before:z-1 before:bg-[#f7f7f7]
-                        ${
-                          activeTab === idx
-                            ? 'bg-[#020a19] before:opacity-0'
-                            : ''
-                        }
+                      className={`
+                        flex-1 min-h-[80px] w-full px-[30px] relative text-center 
+                        whitespace-normal transition-all duration-300 ease-in
+                        before:content-[''] before:absolute before:left-0 before:w-[2px] 
+                        before:h-full before:z-10 before:bg-[#f7f7f7]
+                        // We won't add BG color here, the sliding div does it
                       `}
                       style={{ cursor: 'pointer' }}
                     >
+                      {/* The text is above the sliding background (z-20 or so) */}
                       <p
-                        className={`p-[26px_0] max-w-[240px] h-[80px] w-full flex justify-center items-center 
-                          text-[22px] font-[600] leading-[24px] relative z-3
+                        className={`relative z-20 p-[26px_0] max-w-[240px] h-[80px] 
+                          w-full flex justify-center items-center 
+                          text-[22px] font-[600] leading-[24px] 
                           ${
                             activeTab === idx
                               ? 'text-white'
@@ -166,7 +182,8 @@ export default function KioskTabs() {
 
           {/* Tab Content */}
           <div className="p-[40px] bg-[#f7f7f7] overflow-hidden">
-            {activeTab >= 0 && (
+            {/* Only show content if activeTab >= 0 */}
+            {activeTab >= 0 && activeTab < tabsData.length && (
               <div className="lg:flex-row justify-between flex flex-col-reverse">
                 <div className="mb-[20px] lg:mb-0 flex-1 text-left max-w-[760px] sm:mx-auto lg:pr-[40px]">
                   <h3 className="text-[#020A19] font-bold text-[20px] leading-[26px] antialiased max-w-[670px] pb-[15px] lg:pb-[40px] sm:text-[28px] sm:leading-[40px]">
@@ -178,7 +195,7 @@ export default function KioskTabs() {
                         key={i}
                         className="relative mb-[10px] lg:mb-[25px] last:mb-0 pl-8"
                       >
-                        <span className="absolute left-0  text-[#60c458]">
+                        <span className="absolute left-0 text-[#60c458]">
                           ✔
                         </span>
                         <p className="text-[16px] leading-[24px] sm:text-[18px] font-normal sm:leading-[28px] text-[#333333]">

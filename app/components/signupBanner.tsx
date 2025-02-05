@@ -3,23 +3,19 @@ import React from 'react';
 export default function SignupBanner() {
   return (
     <section className="bg-[#020a19] flex justify-center items-center md:h-[330px] py-[50px] md:py-0 relative">
-      {/* Possibly the anchor offset for # link (in your snippet, it was an invisible div) */}
       <div className="absolute top-[-65px] xl:top-[-74px] opacity-0 w-0 h-0 m-0" />
 
       <div className="w-[88%] mx-auto md:max-w-[1300px]">
-        {/* Heading */}
         <div className="w-full text-center max-w-[1000px] mx-auto">
           <h3 className="text-[30px] text-[#fff] font-bold leading-[38px] text-center mb-[20px] md:text-[42px] md:leading-[1.3]">
             Sign up and try Hexnode free for 14 days!
           </h3>
         </div>
 
-        {/* Form */}
         <div className="max-w-[580px] mx-auto">
           <div className="max-w-[527px] mx-auto">
             <form className="p-0 m-0">
               <div className="flex justify-between flex-col items-center md:flex-row">
-                {/* Email input */}
                 <div className="w-full max-w-[325px] md:mr-[8px]">
                   <input
                     type="email"
@@ -37,7 +33,6 @@ export default function SignupBanner() {
                   />
                 </div>
 
-                {/* Submit button */}
                 <div className="w-full max-w-[325px] mt-[15px] md:max-w-[195px] md:mt-0">
                   <button
                     type="button"
@@ -57,7 +52,6 @@ export default function SignupBanner() {
             </form>
           </div>
 
-          {/* Bottom text: “No credit cards required. Request a demo” */}
           <div className="pt-[10px] relative">
             <p className="text-[17px] leading-[24px] text-center text-[#556575] font-medium m-0 pt-[10px]">
               No credit cards required.

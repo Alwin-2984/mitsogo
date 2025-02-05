@@ -60,13 +60,10 @@ const tabsData = [
 export default function KioskTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
-  // Store refs for each <li> so we can measure them
   const tabsRef = useRef<HTMLLIElement[]>([]);
-  // Track indicator position/width
   const [indicatorLeft, setIndicatorLeft] = useState(0);
   const [indicatorWidth, setIndicatorWidth] = useState(0);
 
-  // On each render, or when `activeTab` changes, update the indicator
   useEffect(() => {
     const current = tabsRef.current[activeTab];
     if (current) {
@@ -75,10 +72,7 @@ export default function KioskTabs() {
     }
   }, [activeTab]);
 
-  // Handle mobile accordion behavior
   const handleTabClick = (idx: number) => {
-    // If user re-clicks the same tab (on mobile), close it
-    // Otherwise set the new active index
     if (activeTab === idx) {
       setActiveTab(-1);
     } else {
@@ -93,7 +87,6 @@ export default function KioskTabs() {
       </h2>
 
       <div className="pt-[40px] sm:pt-[60px]">
-        {/* MOBILE Accordion (visible below sm) */}
         <div className="flex flex-col sm:hidden">
           {tabsData.map((tab, idx) => (
             <div key={idx} className="border rounded-md">
@@ -148,15 +141,11 @@ export default function KioskTabs() {
           ))}
         </div>
 
-        {/* DESKTOP Tabs (hidden below sm) */}
         <div className="hidden sm:block">
-          {/* Tabs container */}
           <div className="flex bg-white justify-center relative">
             <div className="w-full relative border border-[#f7f7f7] rounded-t-[4px] overflow-hidden">
               <div className="w-full scroll-smooth overflow-x-auto relative inline-block">
-                {/* The UL is positioned relative so we can place our animated indicator behind the <li> */}
                 <ul className="relative flex duration-700 ease-in justify-between items-center whitespace-nowrap cursor-pointer">
-                  {/* The “slide” indicator */}
                   <div
                     className="absolute rounded top-0 left-0 h-full bg-[#020a19] z-[100] transition-all duration-700"
                     style={{
@@ -180,7 +169,6 @@ export default function KioskTabs() {
                       `}
                       style={{ cursor: 'pointer' }}
                     >
-                      {/* The text is above the sliding background (z-20 or so) */}
                       <p
                         className={`relative z-[101] p-[26px_0] max-w-[240px] h-[80px] 
                           w-full flex justify-center items-center 
@@ -201,9 +189,7 @@ export default function KioskTabs() {
             </div>
           </div>
 
-          {/* Tab Content */}
           <div className="p-[40px] bg-[#f7f7f7] overflow-hidden">
-            {/* Only show content if activeTab >= 0 */}
             {activeTab >= 0 && activeTab < tabsData.length && (
               <div className="lg:flex-row justify-between flex flex-col-reverse">
                 <div className="mb-[20px] lg:mb-0 flex-1 text-left max-w-[760px] sm:mx-auto lg:pr-[40px]">

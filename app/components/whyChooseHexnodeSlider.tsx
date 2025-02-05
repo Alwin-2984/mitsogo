@@ -92,7 +92,6 @@ export default function WhyChooseHexnode() {
 
   return (
     <section className="pb-[30px] pt-[60px] lg:pt-[120px] md:pb-[60px] bg-[#F7F7F7] relative">
-      {/* Anchor for “customers” as in snippet */}
       <div
         id="customers"
         className="absolute top-[-65px] xl:top-[-74px] opacity-0 w-[0px] h-[0px] m-0"
@@ -106,9 +105,7 @@ export default function WhyChooseHexnode() {
           <Slider {...settings}>
             {slidesData.map((slide, index) => (
               <div key={index} className="px-0">
-                {/* Slide container */}
                 <div className="flex flex-col md:flex-row overflow-hidden rounded-[18px] relative group">
-                  {/* Image Container */}
                   <div className="max-h-[400px] w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[320px] lg:h-[320px] relative md:basis-[47%] md:max-w-[320px] leading-[0px] overflow-hidden">
                     <Image
                       alt={`${slide.name} image`}
@@ -118,15 +115,12 @@ export default function WhyChooseHexnode() {
                       height={320}
                     />
                   </div>
-                  {/* Text Container */}
                   <div className="max-w-[640px] bg-[#ffffff] flex justify-center flex-col grow md:min-h-[310px]">
-                    {/* Quote */}
                     <div className="md:max-h-[125px] md:overflow-scroll px-[20px] md:pl-[60px] md:pr-[55px] pt-[20px] pb-[25px] md:py-0 md:mt-[40px] md:mb-[20px] cusreviewslider_hide-scrollbar__lQqUC">
                       <h4 className="text-[16px] sm:text-[20px] md:text-[24px] leading-[24px] sm:leading-[32px] text-[#020a19] font-bold text-center md:text-left antialiased">
                         {slide.quote}
                       </h4>
                     </div>
-                    {/* Bottom details */}
                     <div className="px-[20px] py-[20px] md:pl-[60px] md:pr-[55px] md:py-0 flex flex-col justify-center items-center md:min-h-[120px]">
                       <span className="h-[2px] w-full bg-[#F7F7F7] relative top-[-20px] rounded-[5px]" />
                       <p className="text-center md:text-left w-full mx-auto text-[14px] leading-[11px] sm:text-[20px] sm:leading-[33px] pb-[5px] sm:pb-0 text-[#020a19] font-bold">

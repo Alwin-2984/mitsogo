@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import KioskTabs from './components/kioskTabs';
+import KioskAccordionSection from './components/accordion';
+import WhyChooseHexnode from './components/whyChooseHexnodeSlider';
+import LogosSlider from './components/logoSlider';
 
 export default function Home() {
   return (
@@ -97,6 +100,9 @@ export default function Home() {
           </div>
         </div>
         <KioskTabs />
+        <KioskAccordionSection />
+        <WhyChooseHexnode />
+        <LogosSlider />
       </main>
     </div>
   );

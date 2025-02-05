@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 
-// Your tab data
 export const tabsData = [
   {
     label: 'Single App Kiosk',
@@ -12,7 +11,6 @@ export const tabsData = [
       'Use Hexnode’s Advanced Kiosk settings for additional restrictions or expanded device functionalities while in kiosk mode.',
       'Empower your administrators with full control over the kiosk devices.',
     ],
-    // Example real image from Hexnode for Single App Kiosk:
     imageUrl: '/images/tabimages/single-app-kios-image.jpg',
   },
   {
@@ -23,7 +21,6 @@ export const tabsData = [
       'Seamlessly toggle between authorized apps without leaving the kiosk environment.',
       'Enjoy better app management and control across different user roles.',
     ],
-    // Replace with a real image if desired
     imageUrl: '/images/tabimages/multi-app-kiosk-image.webp',
   },
   {
@@ -63,15 +60,12 @@ export default function KioskTabs() {
 
   return (
     <div className="mx-auto max-w-[1300px] w-[88%] py-20">
-      {/* Section Title */}
       <h2 className="text-center mx-auto text-[#020a19] text-[28px] leading-[1.25] font-[700] antialiased sm:text-[36px] max-w-[900px]">
         Specific kiosk modes for unique use cases
       </h2>
 
       <div className="pt-[40px] sm:pt-[60px]">
-        {/* Mobile Tabs (example only) */}
         <div className="flex justify-between w-full border-b rounded-[4px] flex-col m-0 sm:hidden overflow-hidden">
-          {/* In a real-world scenario, you could replicate the same tab buttons here for mobile */}
           {tabsData.map((tab, idx) => (
             <button
               key={idx}
@@ -167,7 +161,6 @@ export default function KioskTabs() {
                 </ul>
               </div>
 
-              {/* Image Block */}
               <div className="group w-full max-sm:h-[210px] max-w-[308px] flex-1 max-sm:mt-[15px] mb-[20px] lg:mb-0 sm:max-w-[460px]">
                 <div className="rounded-[10px] overflow-hidden">
                   <figure className="relative max-w-[100%] w-auto align-middle max-sm:h-[220px]">

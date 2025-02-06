@@ -94,7 +94,6 @@ export default function KioskTabs() {
                 onClick={() => handleTabClick(idx)}
                 className={`
                   flex w-full justify-between items-center px-4 py-4 rounded-t-md
-                  transition-colors duration-1000 delay-1000
                   ${
                     activeTab === idx
                       ? 'bg-[#020a19] text-white'
@@ -167,18 +166,19 @@ export default function KioskTabs() {
                         whitespace-normal transition-all duration-700 ease-in
                         before:content-[''] before:absolute before:left-0 before:w-[2px] 
                         before:h-full before:z-10 before:bg-[#f7f7f7]
-                        // We won't add BG color here, the sliding div does it
                       `}
                       style={{ cursor: 'pointer' }}
                     >
                       <p
-                        className={`relative z-[101] p-[26px_0] max-w-[240px] h-[80px] 
+                        className={`
+                          relative z-[101] p-[26px_0] max-w-[240px] h-[80px]
                           w-full flex justify-center items-center 
-                          text-[22px] font-[600] leading-[24px] 
+                          text-[22px] font-[600] leading-[24px]
+                          desktop-tab-text
                           ${
                             activeTab === idx
-                              ? 'text-white'
-                              : 'text-[#020a19]/50'
+                              ? 'desktop-tab-text-active'
+                              : 'desktop-tab-text-default'
                           }
                         `}
                       >
@@ -251,6 +251,17 @@ export default function KioskTabs() {
           100% {
             opacity: 1;
             transform: translateX(0);
+          }
+        }
+        @media (min-width: 640px) {
+          .desktop-tab-text {
+            transition: color 0.5s 0.3s;
+          }
+          .desktop-tab-text-active {
+            color: #fff;
+          }
+          .desktop-tab-text-default {
+            color: rgba(2, 10, 25, 0.5);
           }
         }
       `}</style>

@@ -20,6 +20,7 @@ const ExtraFeatureBanner = () => {
               MarketScape UEM Vendors Assessment Reports 2024.
             </p>
           </a>
+          <div className="w-[107px] md:w-[1px] bg-[rgb(255,255,255,20%)] basis-[1px] last:hidden" />
           <a className="max-w-[340px] md:max-w-[27%] flex-[0_0_100%] md:flex-[0_0_27%] px-[0px] py-[40px] md:py-[0px] md:px-[10px] lg:px-[25px] xl:px-[45px] flex flex-col gap-4">
             <div className="flex flex-col items-center md:items-baseline">
               <Image
@@ -34,6 +35,7 @@ const ExtraFeatureBanner = () => {
               for Unified Endpoint Management Tools.
             </p>
           </a>
+          <div className="w-[107px] md:w-[1px] bg-[rgb(255,255,255,20%)] basis-[1px] last:hidden" />
           <a className="max-w-[340px] md:max-w-[27%] flex-[0_0_100%] md:flex-[0_0_27%] px-[0px] py-[40px] md:py-[0px] md:px-[10px] lg:px-[25px] xl:px-[45px] flex flex-col gap-4">
             <div className="flex flex-col items-center md:items-baseline">
               <Image

@@ -92,7 +92,9 @@ export default function KioskTabs() {
             <div key={idx} className="border rounded-md">
               <button
                 onClick={() => handleTabClick(idx)}
-                className={`flex w-full justify-between items-center px-4 py-4 rounded-t-md 
+                className={`
+                  flex w-full justify-between items-center px-4 py-4 rounded-t-md
+                  transition-colors duration-1000 delay-1000
                   ${
                     activeTab === idx
                       ? 'bg-[#020a19] text-white'
@@ -191,7 +193,10 @@ export default function KioskTabs() {
 
           <div className="p-[40px] bg-[#f7f7f7] overflow-hidden">
             {activeTab >= 0 && activeTab < tabsData.length && (
-              <div className="lg:flex-row justify-between flex flex-col-reverse">
+              <div
+                key={activeTab}
+                className="fade-in lg:flex-row justify-between flex flex-col-reverse"
+              >
                 <div className="mb-[20px] lg:mb-0 flex-1 text-left max-w-[760px] sm:mx-auto lg:pr-[40px]">
                   <h3 className="text-[#020A19] font-bold text-[20px] leading-[26px] antialiased max-w-[670px] pb-[15px] lg:pb-[40px] sm:text-[28px] sm:leading-[40px]">
                     {tabsData[activeTab].heading}
@@ -232,6 +237,23 @@ export default function KioskTabs() {
           </div>
         </div>
       </div>
+
+      {/* Inline CSS for fade-in animation */}
+      <style jsx>{`
+        .fade-in {
+          animation: fadeIn 0.7s ease forwards;
+        }
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }

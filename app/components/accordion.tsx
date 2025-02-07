@@ -74,7 +74,7 @@ export default function KioskAccordionWithImages() {
   const currentImage = openIndex >= 0 ? accordionData[openIndex].image : null;
 
   return (
-    <div className="w-[88%] max-w-[1300px] h-[60rem] mx-auto pb-[60px] lg:pb-[120px]">
+    <div className="w-[88%] max-w-[1300px] sm:h-[60rem]  mx-auto pb-[60px] lg:pb-[120px]">
       <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-[#020a19] pb-[20px] md:pb-[20px] max-w-[340px] sm:max-w-[800px] mx-auto">
         What additional possibilities does the Kiosk mode offer?
       </h2>

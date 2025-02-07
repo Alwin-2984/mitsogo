@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full z-[102] left-0 transition-all
+      className={`w-full z-[50] left-0 transition-all
         ${
           isScrolled
             ? 'fixed top-0 bg-white header-fixed nav-fixed-top'

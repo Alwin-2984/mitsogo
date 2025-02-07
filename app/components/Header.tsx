@@ -1,18 +1,21 @@
 'use client';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi'; // example icons
+import { useEffect, useState } from 'react';
+import { FiMenu } from 'react-icons/fi';
+import { HiOutlineX } from 'react-icons/hi';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [showTrialHeader, setShowTrialHeader] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
     function handleScroll() {
-      const scrolled = window.scrollY > 0;
-      setIsScrolled((prev) => (prev === scrolled ? prev : scrolled));
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 0);
+      setShowTrialHeader(scrollY > 600);
     }
 
     handleScroll();
@@ -20,91 +23,55 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const onMouseEnterHandler = () => {
-    if (typeof window !== 'undefined' && window.scrollY === 0) {
-      setIsScrolled(true);
-    }
-  };
-
-  const onMouseLeaveHandler = () => {
-    if (typeof window !== 'undefined' && window.scrollY === 0) {
-      setIsScrolled(false);
-    }
-  };
-
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <header
-      className={`w-full z-[50] left-0 transition-all
-        ${
-          isScrolled
-            ? 'fixed top-0 bg-white header-fixed nav-fixed-top'
-            : 'absolute top-0 text-white'
-        }
-      `}
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
-    >
-      <div className="w-[88%] mx-auto md:max-w-[1300px] flex items-center justify-between h-16">
-        <Image
-          src={isScrolled ? '/assets/logoBlack.png' : '/assets/logoWhite.png'}
-          alt="logo"
-          width={130}
-          height={60}
-        />
-
-        <button
-          className="
-            hidden
-            sm:inline-block
-            text-white
-            bg-red-700
-            px-4
-            text-center
-            uppercase
-            rounded
-            h-11
-          "
+    <>
+      {showTrialHeader ? null : (
+        <header
+          className={`w-full z-[50] left-0 transition-all ${
+            isScrolled
+              ? 'fixed top-0 bg-white shadow-md'
+              : 'absolute top-0 text-white'
+          }`}
         >
-          14 Day Free Trial
-        </button>
+          <div className="w-[88%] mx-auto md:max-w-[1300px] flex items-center justify-between h-16">
+            <Image
+              src={
+                isScrolled ? '/assets/logoBlack.png' : '/assets/logoWhite.png'
+              }
+              alt="logo"
+              width={130}
+              height={60}
+            />
 
-        <button
-          className="
-            sm:hidden
-            bg-transparent
-            text-current
-            p-2
-            rounded
-            focus:outline-none
-          "
-          onClick={openDrawer}
-        >
-          <HiOutlineMenuAlt3 size={28} />
-        </button>
-      </div>
+            <button className="hidden sm:inline-block text-white bg-red-700 px-4 text-center uppercase rounded h-11">
+              14 Day Free Trial
+            </button>
+
+            <button
+              className="sm:hidden bg-transparent text-current p-2 rounded focus:outline-none"
+              onClick={openDrawer}
+            >
+              <FiMenu size={28} />
+            </button>
+          </div>
+        </header>
+      )}
+
+      {showTrialHeader && (
+        <div className="fixed sm:hidden top-0 left-0 w-full bg-white shadow-md z-[49] transition-all flex justify-end py-2 pr-6">
+          <button className="bg-red-700 text-white text-base px-4 uppercase rounded h-11">
+            14 Day Free Trial
+          </button>
+        </div>
+      )}
 
       <div
-        className={`
-          fixed
-          top-0
-          right-0
-          w-full
-          sm:w-[320px]
-          h-screen
-          bg-white
-          shadow-lg
-          transition-transform
-          duration-300
-          z-[200]
-          flex
-          flex-col
-          px-4
-          py-4
-          ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}
-        `}
+        className={`fixed top-0 right-0 w-full sm:w-[320px] h-screen bg-white shadow-lg transition-transform duration-300 z-[200] flex flex-col px-4 py-4 ${
+          drawerOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
         <div className="flex items-center justify-between mb-5">
           <span />
@@ -118,18 +85,7 @@ export default function Header() {
 
         <hr className="mb-6" />
 
-        <button
-          className="
-            text-white
-            bg-red-700
-            px-4
-            text-center
-            uppercase
-            rounded
-            h-11
-            w-full
-          "
-        >
+        <button className="text-white bg-red-700 px-4 text-center uppercase rounded h-11 w-full">
           14 DAY FREE TRIAL
         </button>
 
@@ -139,6 +95,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

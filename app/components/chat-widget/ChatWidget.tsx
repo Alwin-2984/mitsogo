@@ -1,29 +1,31 @@
 'use client';
-
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { BiSend } from 'react-icons/bi';
 import { CgClose } from 'react-icons/cg';
 import {
-    FiBell,
-    FiHome,
-    FiMessageCircle,
-    FiMessageSquare,
+  FiBell,
+  FiHome,
+  FiMessageCircle,
+  FiMessageSquare,
 } from 'react-icons/fi';
 import { GrDown } from 'react-icons/gr';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         popupRef.current &&
-        !popupRef.current.contains(event.target as Node)
+        !popupRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
       ) {
-        setIsOpen(false);
+        requestAnimationFrame(() => setIsOpen(false));
       }
     };
 
@@ -47,17 +49,28 @@ const ChatWidget = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className={`fixed bottom-20 right-6 max-sm:top-0 max-sm:left-0 max-sm:w-screen max-sm:h-full z-[99]  w-96 bg-white shadow-xl rounded-2xl overflow-auto border border-gray-200 flex flex-col`}
+          className="fixed bottom-20 right-6 max-sm:top-0 max-sm:left-0 max-sm:w-screen max-sm:h-full h-[80vh] z-[99] w-96 bg-gradient-to-b from-blue-800 via-blue-200 to-white
+ shadow-xl rounded-2xl overflow-auto border border-gray-200 flex flex-col"
         >
-          <div className="relative">
+          <div className="relative ">
             <CgClose
-              onClick={() => setIsOpen(false)}
-              className="absolute top-7 right-7 text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="absolute top-7 right-7 text-white cursor-pointer sm:hidden"
             />
-            <div className="bg-gradient-to-b h-40 from-blue-500 to-blue-400 text-white p-4 flex flex-col">
-              <h3 className="text-xl font-semibold">hexnode</h3>
-              <p className="text-lg font-medium mt-1">Good Day !</p>
-              <p className="text-base">How can we help?</p>
+            <div className=" h-60 text-white p-4 flex flex-col justify-between">
+              <Image
+                src={'/assets/logoWhite.png'}
+                alt="logo"
+                width={130}
+                height={60}
+              />
+              <span>
+                <p className="text-lg font-medium mt-1">Good Day!</p>
+                <p className="text-base">How can we help?</p>
+              </span>
             </div>
 
             <div className="p-4">
@@ -82,7 +95,7 @@ const ChatWidget = () => {
             <div className="bg-white px-4 py-3 border rounded-lg m-4 flex flex-col shadow-sm">
               <Image
                 src={'/assets/chat-popup-image.jpg'}
-                alt="chat-popup-image.jpg"
+                alt="chat-popup-image"
                 width={300}
                 height={150}
               />
@@ -123,8 +136,13 @@ const ChatWidget = () => {
           </div>
         </motion.div>
       )}
+
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        ref={buttonRef}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
         className={`fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none ${
           isOpen && 'max-sm:hidden'
         }`}

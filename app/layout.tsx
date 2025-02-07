@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Mulish } from 'next/font/google';
 import './globals.css';
+import ChatWidget from './components/chat-widget/ChatWidget';
 
 /**
  * 1. Load Mulish from Google Fonts.
@@ -24,7 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${mulish.variable} antialiased`}>{children}</body>
+      <body className={`${mulish.variable} antialiased`}>
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }

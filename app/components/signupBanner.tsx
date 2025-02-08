@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function SignupBanner() {
   return (
-    <section className="bg-[#020a19] flex justify-center items-center md:h-[330px] py-[50px] md:py-0 relative">
+    <section className="bg-darkBlue flex justify-center items-center md:h-[330px] py-[50px] md:py-0 relative">
       <div className="absolute top-[-65px] xl:top-[-74px] opacity-0 w-0 h-0 m-0" />
 
       <div className="w-[88%] mx-auto md:max-w-[1300px]">
         <div className="w-full text-center max-w-[1000px] mx-auto">
-          <h3 className="text-[30px] text-[#fff] font-bold leading-[38px] text-center mb-[20px] md:text-[42px] md:leading-[1.3]">
+          <h3 className="text-[30px] text-white font-bold leading-[38px] text-center mb-[20px] md:text-[42px] md:leading-[1.3]">
             Sign up and try Hexnode free for 14 days!
           </h3>
         </div>
@@ -28,7 +28,7 @@ export default function SignupBanner() {
                       rounded-[3px] px-[10px]
                       shadow-none
                       transition-all duration-[0.3s] ease-in-out
-                      placeholder:text-[#c6c6c6]
+                      placeholder:text-placeholderGray
                     "
                   />
                 </div>
@@ -37,12 +37,12 @@ export default function SignupBanner() {
                   <button
                     type="button"
                     className="
-                      text-[17px] leading-[24px] uppercase text-[#fff] font-normal
-                      bg-[#dd0735] w-full h-[53px] border-0 flex justify-center items-center
+                      text-[17px] leading-[24px] uppercase text-white font-normal
+                      bg-linkTextRed w-full h-[53px] border-0 flex justify-center items-center
                       rounded-[3px] 
                       transition-all ease-in-out duration-[0.25s] 
-                      cursor-pointer hover:text-[#fff] hover:bg-[#bb022a]
-                      focus:text-[#fff] focus:bg-[#bb022a]
+                      cursor-pointer hover:text-white hover:bg-[#bb022a]
+                      focus:text-white focus:bg-[#bb022a]
                     "
                   >
                     GET STARTED
@@ -57,7 +57,7 @@ export default function SignupBanner() {
               No credit cards required.
               <a
                 className="
-                  text-[17px] leading-[24px] text-[#dd0735] font-medium 
+                  text-[17px] leading-[24px] text-linkTextRed font-medium 
                   whitespace-nowrap inline-block 
                   transition-all duration-[0.3s] ease-in-out
                   pr-[20px] pb-[0px] pl-[5px] 

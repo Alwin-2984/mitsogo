@@ -3,7 +3,7 @@ import React from 'react';
 
 const ExtraFeatureBanner = () => {
   return (
-    <div className="bg-[#1A1C2B] md:py-[30px]">
+    <div className="bg-darkBlueSecondary md:py-[30px]">
       <div className="w-[88%] max-w-[1300px] mx-auto">
         <div className="flex flex-col max-md:items-center md:flex-row  justify-center mx-[0px] md:justify-between md:mx-[-10px] lg:mx-[-25px] xl:mx-[-45px]">
           <a className="max-w-[340px] md:max-w-[27%] flex-[0_0_100%] md:flex-[0_0_27%] px-[0px] py-[40px] md:py-[0px] md:px-[10px] lg:px-[25px] xl:px-[45px] flex flex-col gap-4">

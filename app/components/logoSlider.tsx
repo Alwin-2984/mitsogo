@@ -29,10 +29,10 @@ export default function LogosSlider() {
   };
 
   return (
-    <section className="pb-[60px] pt-[10px] lg:pb-[120px] md:pt-[20px] bg-[#F7F7F7] relative">
+    <section className="pb-[60px] pt-[10px] lg:pb-[120px] md:pt-[20px] bg-graySecondary relative">
       <div className="w-[88%] mx-auto md:max-w-[1300px] relative">
-        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute left-0 bg-gradient-to-r from-[#F7F7F7] via-[#F7F7F7] to-transparent z-[11]" />
-        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute right-0 bg-gradient-to-l from-[#F7F7F7] via-[#F7F7F7] to-transparent z-[11]" />
+        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute left-0 bg-gradient-to-r from-graySecondary via-graySecondary to-transparent z-[11]" />
+        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute right-0 bg-gradient-to-l from-graySecondary via-graySecondary to-transparent z-[11]" />
 
         <Slider {...settings} className="relative z-[2]" arrows={false}>
           {logos.map((logo, idx) => (

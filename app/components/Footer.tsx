@@ -14,7 +14,7 @@ export default function Footer() {
                       <a
                         className="text-[12px] leading-[24px] text-text-default font-medium 
                                    cursor-pointer transition-all duration-[0.3s] ease-in-out 
-                                   hover:text-[#020a19]"
+                                   hover:text-darkBlue"
                         href="https://www.hexnode.com/legal/terms-of-use/"
                         role="link"
                       >
@@ -26,7 +26,7 @@ export default function Footer() {
                       <a
                         className="text-[12px] leading-[24px] text-text-default font-medium
                                    cursor-pointer transition-all duration-[0.3s] ease-in-out 
-                                   hover:text-[#020a19]"
+                                   hover:text-darkBlue"
                         href="https://www.hexnode.com/legal/privacy-policy/"
                         role="link"
                       >
@@ -37,7 +37,7 @@ export default function Footer() {
                       <a
                         className="text-[12px] leading-[24px] text-text-default font-medium
                                    cursor-pointer transition-all duration-[0.3s] ease-in-out
-                                   hover:text-[#020a19]"
+                                   hover:text-darkBlue"
                         href="https://www.hexnode.com/legal/cookies-policy/"
                         role="link"
                       >

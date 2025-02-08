@@ -6,7 +6,7 @@ export default function PlatformsSupported() {
   return (
     <section className="pt-[60px] lg:pt-[120px] pb-[60px] lg:pb-[120px] flex justify-center items-center text-center flex-col">
       <div className="mx-auto max-w-[1300px] w-[88%]">
-        <h2 className="text-center mb-[40px] text-[#020a19] text-[32px] leading-[40px] font-[700] antialiased md:mb-[60px] sm:text-[40px] sm:leading-[1.3]">
+        <h2 className="text-center mb-[40px] text-darkBlue text-[32px] leading-[40px] font-[700] antialiased md:mb-[60px] sm:text-[40px] sm:leading-[1.3]">
           Platforms supported
         </h2>
 

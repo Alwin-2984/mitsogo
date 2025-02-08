@@ -3,12 +3,12 @@ import React from 'react';
 
 export default function HeroBanner() {
   return (
-    <section className="p-[90px_0_30px] xl:p-[120px_0_0px] bg-[#020A19]">
+    <section className="p-[90px_0_30px] xl:p-[120px_0_0px] bg-darkBlue">
       <div className="w-[88%] max-w-[1300px] mx-auto">
         <div className="flex flex-col xl:flex-row justify-center items-center xl:justify-between">
           <div className="flex flex-col max-w-full sm:max-w-[550px] xl:max-w-[498px] order-2 xl:order-1">
             <div className="mb-[20px] md:mb-[40px]">
-              <h1 className="text-[#FFFFFF] text-[34px] leading-[44px] text-center lg:text-[42px] lg:leading-[53px] xl:text-left font-bold antialiased">
+              <h1 className="text-white text-[34px] leading-[44px] text-center lg:text-[42px] lg:leading-[53px] xl:text-left font-bold antialiased">
                 Turn your devices into kiosks in a few minutes with Hexnode UEM
               </h1>
             </div>
@@ -27,7 +27,7 @@ export default function HeroBanner() {
                       rounded-[3px] px-[10px]
                       shadow-none
                       transition-all duration-[0.3s] ease-in-out
-                      placeholder:text-[#c6c6c6]
+                      placeholder:text-placeholderGray
                     "
                   />
                 </div>
@@ -36,12 +36,12 @@ export default function HeroBanner() {
                   <button
                     type="button"
                     className="
-                      text-[17px] leading-[24px] uppercase text-[#fff] font-normal
-                      bg-[#dd0735] w-full h-[53px] border-0 flex justify-center items-center
+                      text-[17px] leading-[24px] uppercase text-white font-normal
+                      bg-primaryRed w-full h-[53px] border-0 flex justify-center items-center
                       rounded-[3px] 
                       transition-all ease-in-out duration-[0.25s] 
-                      cursor-pointer hover:text-[#fff] hover:bg-[#bb022a]
-                      focus:text-[#fff] focus:bg-[#bb022a]
+                      cursor-pointer hover:text-white hover:bg-primaryRed
+                      focus:text-white focus:bg-primaryRed
                     "
                   >
                     GET STARTED Now

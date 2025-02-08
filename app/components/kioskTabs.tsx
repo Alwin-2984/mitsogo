@@ -29,7 +29,7 @@ export default function KioskTabs() {
 
   return (
     <div className="mx-auto max-w-[1300px] w-[88%] py-20">
-      <h2 className="text-center mx-auto text-[#020a19] text-[28px] leading-[1.25] font-[700] antialiased sm:text-[36px] max-w-[900px]">
+      <h2 className="text-center mx-auto text-darkBlue text-[28px] leading-[1.25] font-[700] antialiased sm:text-[36px] max-w-[900px]">
         Specific kiosk modes for unique use cases
       </h2>
 
@@ -43,8 +43,8 @@ export default function KioskTabs() {
                   flex w-full justify-between items-center px-4 py-4 rounded-t-md
                   ${
                     activeTab === idx
-                      ? 'bg-[#020a19] text-white'
-                      : 'bg-white text-[#020a19]/50'
+                      ? 'bg-darkBlue text-white'
+                      : 'bg-white text-darkBlue/50'
                   }
                 `}
               >
@@ -62,7 +62,7 @@ export default function KioskTabs() {
 
               {activeTab === idx && (
                 <div className="p-4 bg-gray-50">
-                  <h3 className="text-[#020A19] font-bold text-[20px] leading-[26px] pb-2">
+                  <h3 className="text-darkBlue font-bold text-[20px] leading-[26px] pb-2">
                     {tab.heading}
                   </h3>
                   <ul>
@@ -91,11 +91,11 @@ export default function KioskTabs() {
 
         <div className="hidden sm:block">
           <div className="flex bg-white justify-center relative">
-            <div className="w-full relative border border-[#f7f7f7] rounded-t-[4px] overflow-hidden">
+            <div className="w-full relative border border-graySecondary rounded-t-[4px] overflow-hidden">
               <div className="w-full scroll-smooth overflow-x-auto relative inline-block">
                 <ul className="relative flex duration-700 ease-in justify-between items-center whitespace-nowrap cursor-pointer">
                   <div
-                    className="absolute rounded top-0 left-0 h-full bg-[#020a19] z-[100] transition-all duration-700"
+                    className="absolute rounded top-0 left-0 h-full bg-darkBlue z-[100] transition-all duration-700"
                     style={{
                       transform: `translateX(${indicatorLeft}px)`,
                       width: indicatorWidth,
@@ -112,7 +112,7 @@ export default function KioskTabs() {
                         flex-1 min-h-[80px] w-full px-[30px] relative text-center 
                         whitespace-normal transition-all duration-700 ease-in
                         before:content-[''] before:absolute before:left-0 before:w-[2px] 
-                        before:h-full before:z-10 before:bg-[#f7f7f7]
+                        before:h-full before:z-10 before:bg-graySecondary
                       `}
                       style={{ cursor: 'pointer' }}
                     >
@@ -138,14 +138,14 @@ export default function KioskTabs() {
             </div>
           </div>
 
-          <div className="p-[40px] bg-[#f7f7f7] overflow-hidden">
+          <div className="p-[40px] bg-graySecondary overflow-hidden">
             {activeTab >= 0 && activeTab < tabsData.length && (
               <div
                 key={activeTab}
                 className="fade-in lg:flex-row justify-between flex flex-col-reverse"
               >
                 <div className="mb-[20px] lg:mb-0 flex-1 text-left max-w-[760px] sm:mx-auto lg:pr-[40px]">
-                  <h3 className="text-[#020A19] font-bold text-[20px] leading-[26px] antialiased max-w-[670px] pb-[15px] lg:pb-[40px] sm:text-[28px] sm:leading-[40px]">
+                  <h3 className="text-darkBlue font-bold text-[20px] leading-[26px] antialiased max-w-[670px] pb-[15px] lg:pb-[40px] sm:text-[28px] sm:leading-[40px]">
                     {tabsData[activeTab].heading}
                   </h3>
                   <ul>

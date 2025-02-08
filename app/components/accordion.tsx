@@ -23,7 +23,7 @@ export default function KioskAccordionWithImages() {
 
   return (
     <div className="w-[88%] max-w-[1300px] sm:h-[60rem]  mx-auto pb-[60px] lg:pb-[120px]">
-      <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-[#020a19] pb-[20px] md:pb-[20px] max-w-[340px] sm:max-w-[800px] mx-auto">
+      <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-darkBlue pb-[20px] md:pb-[20px] max-w-[340px] sm:max-w-[800px] mx-auto">
         What additional possibilities does the Kiosk mode offer?
       </h2>
 
@@ -50,7 +50,7 @@ export default function KioskAccordionWithImages() {
             return (
               <div
                 key={index}
-                className="relative border-b border-[#F7F7F7] border-solid last:border-b-0 py-[20px] lg:py-[25px] first:pt-0 last:pb-0"
+                className="relative border-b border-graySecondary border-solid last:border-b-0 py-[20px] lg:py-[25px] first:pt-0 last:pb-0"
               >
                 <h3
                   onClick={() => handleAccordionClick(index)}
@@ -96,7 +96,7 @@ export default function KioskAccordionWithImages() {
                         className="group/tabLink inline-flex items-center justify-start mt-[10px]"
                         href={item.link}
                       >
-                        <span className="uppercase text-[18px] leading-[23px] text-[#DD0735] font-semibold">
+                        <span className="uppercase text-[18px] leading-[23px] text-linkTextRed font-semibold">
                           {item.linkText}
                         </span>
                         <div className="relative z-1">

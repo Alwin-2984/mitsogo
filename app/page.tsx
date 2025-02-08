@@ -1,4 +1,3 @@
-'use client';
 import KioskAccordionSection from './components/accordion';
 import ExtraFeatureBanner from './components/extraFeatureBanner';
 import Footer from './components/Footer';

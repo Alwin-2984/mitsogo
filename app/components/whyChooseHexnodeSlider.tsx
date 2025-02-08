@@ -12,7 +12,7 @@ function PrevArrow(props: any) {
 
   return (
     <button
-      className={`bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] cursor-pointer group
+      className={`bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-white lg:bottom-[50%] cursor-pointer group
         translate-x-[-62px] lg:translate-x-[-50%] lg:translate-y-[50%] lg:left-[-60px]
         ${isDisabled ? 'cursor-not-allowed' : ''}`}
       onClick={onClick}
@@ -34,7 +34,7 @@ function NextArrow(props: any) {
 
   return (
     <button
-      className={`bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] group 
+      className={`bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-white lg:bottom-[50%] group 
         translate-x-[8px] lg:translate-x-[50%] lg:translate-y-[50%] lg:left-[unset] lg:right-[-60px]
         ${isDisabled ? 'cursor-not-allowed' : ''}`}
       onClick={onClick}
@@ -64,13 +64,13 @@ export default function WhyChooseHexnode() {
   };
 
   return (
-    <section className="pb-[30px] pt-[60px] lg:pt-[120px] md:pb-[60px] bg-[#F7F7F7] relative">
+    <section className="pb-[30px] pt-[60px] lg:pt-[120px] md:pb-[60px] bg-graySecondary relative">
       <div
         id="customers"
         className="absolute top-[-65px] xl:top-[-74px] opacity-0 w-[0px] h-[0px] m-0"
       />
       <div className="w-[88%] mx-auto max-w-[1300px]">
-        <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-[#020a19] pb-0 md:pb-[20px]">
+        <h2 className="antialiased text-[32px] md:text-[40px] leading-[40px] md:leading-[1.3] text-center font-bold text-darkBlue pb-0 md:pb-[20px]">
           Why should you choose Hexnode?
         </h2>
 
@@ -88,24 +88,24 @@ export default function WhyChooseHexnode() {
                       height={320}
                     />
                   </div>
-                  <div className="max-w-[640px] bg-[#ffffff] flex justify-center flex-col grow md:min-h-[310px]">
+                  <div className="max-w-[640px] bg-white flex justify-center flex-col grow md:min-h-[310px]">
                     <div className="md:max-h-[125px] md:overflow-scroll px-[20px] md:pl-[60px] md:pr-[55px] pt-[20px] pb-[25px] md:py-0 md:mt-[40px] md:mb-[20px] cusreviewslider_hide-scrollbar__lQqUC">
-                      <h4 className="text-[16px] sm:text-[20px] md:text-[24px] leading-[24px] sm:leading-[32px] text-[#020a19] font-bold text-center md:text-left antialiased">
+                      <h4 className="text-[16px] sm:text-[20px] md:text-[24px] leading-[24px] sm:leading-[32px] text-darkBlue font-bold text-center md:text-left antialiased">
                         {slide.quote}
                       </h4>
                     </div>
                     <div className="px-[20px] py-[20px] md:pl-[60px] md:pr-[55px] md:py-0 flex flex-col justify-center items-center md:min-h-[120px]">
-                      <span className="h-[2px] w-full bg-[#F7F7F7] relative top-[-20px] rounded-[5px]" />
-                      <p className="text-center md:text-left w-full mx-auto text-[14px] leading-[11px] sm:text-[20px] sm:leading-[33px] pb-[5px] sm:pb-0 text-[#020a19] font-bold">
+                      <span className="h-[2px] w-full bg-graySecondary relative top-[-20px] rounded-[5px]" />
+                      <p className="text-center md:text-left w-full mx-auto text-[14px] leading-[11px] sm:text-[20px] sm:leading-[33px] pb-[5px] sm:pb-0 text-darkBlue font-bold">
                         {slide.name}
                       </p>
                       {slide.role && (
-                        <small className="text-center md:text-left w-full mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-[#020a19] font-normal max-w-[294px] opacity-70">
+                        <small className="text-center md:text-left w-full mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-darkBlue font-normal max-w-[294px] opacity-70">
                           {slide.role}
                         </small>
                       )}
                       {slide.company && (
-                        <small className="text-center mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-[#020a19] font-normal max-w-[294px] opacity-70">
+                        <small className="text-center mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-darkBlue font-normal max-w-[294px] opacity-70">
                           {slide.company}
                         </small>
                       )}

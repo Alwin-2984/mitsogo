@@ -125,7 +125,7 @@ export default function Header() {
           <span />
           <button
             onClick={closeDrawer}
-            className="text-[#020a19] hover:text-red-700 transition-colors"
+            className="text-darkBlue hover:text-red-700 transition-colors"
           >
             <HiOutlineX size={26} />
           </button>
@@ -138,7 +138,7 @@ export default function Header() {
         </button>
 
         <div className="mt-4 text-center">
-          <a href="/login" className="text-[#020a19] hover:underline">
+          <a href="/login" className="text-darkBlue hover:underline">
             Login
           </a>
         </div>

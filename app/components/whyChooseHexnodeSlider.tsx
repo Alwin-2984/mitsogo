@@ -87,7 +87,6 @@ export default function WhyChooseHexnode() {
     nextArrow: (
       <NextArrow slideCount={slidesData.length} currentSlide={undefined} />
     ),
-    afterChange: (current: number) => {},
   };
 
   return (

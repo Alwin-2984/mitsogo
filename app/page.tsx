@@ -24,7 +24,6 @@ export default function Home() {
         <PlatformsSupported />
         <SignupBanner />
       </main>
-
       <Footer />
     </div>
   );

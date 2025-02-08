@@ -105,7 +105,7 @@ export default function Header() {
                 animate="visible"
                 exit="hidden"
                 transition={{ duration: 0.3 }}
-                className="w-full bg-white shadow-md flex justify-end py-2 pr-6 border-t"
+                className="sm:hidden w-full bg-white shadow-md flex justify-end py-2 pr-6 border-t"
               >
                 <button className="bg-red-700 text-white text-base px-4 uppercase rounded h-11">
                   14 Day Free Trial

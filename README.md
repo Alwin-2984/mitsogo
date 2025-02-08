@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Name
+
+This project uses the following technologies:
+
+- **Next.js (with TypeScript)** (v15)
+- **React** (v19)
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+
+```bash
+npm install
+```
+
+### 2. Running the Development Server
+
+To start the development server, execute:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Building the Project for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build, run:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Running the Production Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After building the project, start the production server with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Additional Commands
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Linting:**
+
+  ```bash
+  npm run lint
+  ```
+
+- **CodeFormathing(prettier):**
+
+```bash
+ npm format
+```
+
+## challenges
+
+The tab component(Specific kiosk modes for unique use cases) was a little bit challenging animation pull out
+
+## some features
+
+since i am using next js i have done partial ssr for improve the application perfomance
+
+using typescript for typesafety
+
+minimal use of third party libraries

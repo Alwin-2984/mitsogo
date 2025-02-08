@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fi';
 import { GrDown } from 'react-icons/gr';
 
+// I haven't given the ui design much thought because it's a paid service library.
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);

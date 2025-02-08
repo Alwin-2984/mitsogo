@@ -5,7 +5,8 @@ This project uses the following technologies:
 - **Next.js (with TypeScript)** (v15)
 - **React** (v19)
 - **Tailwind CSS** for styling
-- **Framer Motion** for animations
+- **Node version** v20.14.0
+- **npm version** v10.8.1
 
 ## Getting Started
 

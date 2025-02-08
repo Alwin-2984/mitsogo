@@ -4,6 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import { slidesData } from '../dummy-data/sliderData';
 
 function PrevArrow(props: any) {
   const { onClick, currentSlide } = props;
@@ -48,33 +49,6 @@ function NextArrow(props: any) {
     </button>
   );
 }
-
-const slidesData = [
-  {
-    name: 'Justin Modrak',
-    role: 'Technology Coordinator',
-    company: 'East Troy Community School District',
-    quote: `"Hexnode is of great value. Works great with Android and iOS!"`,
-    imageUrl:
-      'https://static.hexnode.com/v2/assets/img/customer-images/justin-modrak.png',
-  },
-  {
-    name: 'Dalibor Kruljac',
-    role: '',
-    company: 'KAMELEYA LTD',
-    quote: `"Most complete MDM solution I found, and I tested many of them, including major names"`,
-    imageUrl:
-      'https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png',
-  },
-  {
-    name: 'Chris Robinson',
-    role: 'Executive Account Manager, NCS',
-    company: '',
-    quote: `"It seemed to be in-line with everything we were looking at."`,
-    imageUrl:
-      'https://static.hexnode.com/v2/assets/img/customer-images/chris-robinson.png',
-  },
-];
 
 export default function WhyChooseHexnode() {
   const settings = {

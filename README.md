@@ -1,4 +1,4 @@
-# Project Name
+# Hexnode
 
 This project uses the following technologies:
 
@@ -61,12 +61,18 @@ npm start
 
 ## challenges
 
-The tab component(Specific kiosk modes for unique use cases) was a little bit challenging animation pull out
+Tab Component Animations: Implementing smooth animations for tab transitions, particularly for kiosk modes, was challenging. The issue primarily involved maintaining a seamless user experience while ensuring performance optimizations in animation pull-outs
 
 ## some features
 
-since i am using next js i have done partial ssr for improve the application perfomance
+Partial SSR for Performance – Utilized Next.js server-side rendering selectively to enhance performance while maintaining client-side interactivity.
 
-using typescript for typesafety
+Type Safety with TypeScript – Ensured robust and maintainable code by leveraging TypeScript’s type safety and inference.
 
-minimal use of third party libraries
+Minimal Third-Party Libraries – Kept external dependencies to a minimum to reduce bundle size and improve maintainability.
+
+Image Optimization – Used Next.js Image Component for automatic image optimization, lazy loading, and responsive image handling.
+
+Code Consistency with Prettier & ESLint – Enforced consistent code formatting and best practices using Prettier and ESLint, improving readability and maintainability.
+
+Etra feature on ui - Hideing the main header when scrolling to the bottom on pc
